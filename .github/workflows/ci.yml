@@ -45,8 +45,8 @@ jobs:
           npx prisma generate
           npx prisma migrate deploy
 
-      - name: Run ESLint
-        run: npx eslint .
+      - name: Install ESLint v8
+        run: npm install eslint@8 --save-dev
 
       - name: Run tests
         run: npm test
