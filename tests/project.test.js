@@ -4,7 +4,7 @@ const { generateToken: generateTestToken } = require('../src/utils/jwt');
 
 describe('GET /projects - pagination', () => {
   it('should return paginated project list', async () => {
-    const token = generateTestToken(); // mock JWT
+    const token = generateTestToken(user = { id: 1 });
     const res = await request(app)
       .get('/projects?page=1&limit=2')
       .set('Authorization', `Bearer ${token}`);

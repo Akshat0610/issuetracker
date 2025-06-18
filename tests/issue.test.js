@@ -4,7 +4,7 @@ const { generateToken: generateTestToken } = require('../src/utils/jwt');
 
 describe('GET /issues - pagination and filters', () => {
   it('should return filtered and paginated issues', async () => {
-    const token = generateTestToken();
+    const token = generateTestToken(user = { id: 1 });
     const res = await request(app)
       .get('/issues?status=open&page=1&limit=2')
       .set('Authorization', `Bearer ${token}`);
