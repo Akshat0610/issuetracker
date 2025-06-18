@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../src/app');
-const { generateTestToken } = require('./utils');
+const { generateToken: generateTestToken } = require('../src/utils/jwt');
 
 describe('GET /projects - pagination', () => {
   it('should return paginated project list', async () => {
