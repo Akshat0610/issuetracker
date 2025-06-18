@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../src/app');
 const { PrismaClient } = require('@prisma/client');
-
+process.env.JWT_SECRET = 'testsecret123';
 const prisma = new PrismaClient();
 
 describe('Auth API', () => {
