@@ -1,6 +1,7 @@
 const request = require('supertest');
 const app = require('../src/app');
 const { generateToken: generateTestToken } = require('../src/utils/jwt');
+process.env.JWT_SECRET = 'testsecret123';
 
 describe('GET /issues - pagination and filters', () => {
   it('should return filtered and paginated issues', async () => {
