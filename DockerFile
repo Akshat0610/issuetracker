@@ -1,0 +1,13 @@
+#official node image
+FROM node:20
+#setting working directory
+WORKDIR /app
+#copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+#copy source code
+COPY . .
+#expose api port
+EXPOSE 3000
+#commands to start app
+CMD ["npm", "start"]
