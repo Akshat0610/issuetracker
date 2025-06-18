@@ -13,12 +13,12 @@ describe('Auth API', () => {
     await prisma.$disconnect();
   });
 
-  //let email = `testuser_${Date.now()}@example.com`;
+  let email = `testuser_${Date.now()}@example.com`;
 
   it('should sign up a new user', async () => {
     const res = await request(app).post('/auth/signup').send({
       name: 'Test User',
-      email: `testuser_${Date.now()}@example.com`,
+      email,
       password: 'password123'
     });
 
